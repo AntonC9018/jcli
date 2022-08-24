@@ -156,7 +156,7 @@ template CommandTypeContext(
     alias toTypes(TypeGraphNode[] nodes) = staticMap!(getType, aliasSeqOf!(map!"a.typeIndex"(nodes)));
 }
 
-static scope struct IndexHelper(int typeIndex, alias CommandTypeContext) 
+static struct IndexHelper(int typeIndex, alias CommandTypeContext) 
 {
     static assert(CommandTypeContext.Types.length > typeIndex);
     alias Type = CommandTypeContext.Types[typeIndex];
